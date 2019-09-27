@@ -282,7 +282,7 @@ In this exercise, you created all the resources that you will use for this lab.
 
 1.  In the **Key Vault** blade, select the **Access policies** link located in the **Settings** section.
 
-1.  In the **Access policies** pane, select **+ Add new**.
+1.  In the **Access policies** pane, select **+ Add Access Policy**.
 
 1.  In the **Add access policy** blade, perform the following actions:
     
@@ -298,7 +298,7 @@ In this exercise, you created all the resources that you will use for this lab.
     
     1.  Leave the **Authorized application** text box set to its default value.
     
-    1.  Select **OK**.
+    1.  Select **Add**.
 
 1.  Back in the **Access policies** pane, select **Save**.
 
@@ -350,7 +350,7 @@ In this exercise, you created a server-assigned managed service identity for you
 
 1.  In the **SecureFunction** blade, select the **securefunc\*** function app that you created earlier in this lab.
 
-1.  In the **Function App** blade, select the **Platform features** tab.
+1.  In the **Function Apps** blade, select the **Platform features** tab.
 
 1.  In the **Platform features** tab, select the **Configuration** link located in the **General Settings** section.
 
@@ -382,7 +382,7 @@ In this exercise, you created a server-assigned managed service identity for you
 
 1.  In the **SecureFunction** blade, select the **securefunc\*** function app that you created earlier in this lab.
 
-1.  In the **Function App** blade, select **+ New function**.
+1.  In the **Function App** blade, click **+** next to the **Functions** dropdown.
 
 1.  In the **New Azure Function** quickstart, perform the following actions:
     
@@ -394,7 +394,7 @@ In this exercise, you created a server-assigned managed service identity for you
     
     1.  Select **Finish and view templates**.
     
-    1.  In the **Templates** drop-down list, select **HTTP trigger**.
+    1.  In the list of templates, select **HTTP trigger**.
     
     1.  In the **New Function** pop-up, locate the **Name** text box and enter **FileParser**.
     
@@ -415,9 +415,9 @@ In this exercise, you created a server-assigned managed service identity for you
     public static async Task<IActionResult> Run(HttpRequest req, ILogger log)
     {
 
-        log.LogInformation("C\# HTTP trigger function processed a request.");
+        log.LogInformation("C# HTTP trigger function processed a request.");
 
-        string name = req.Query\["name"\];
+        string name = req.Query["name"];
 
         string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
 
@@ -586,7 +586,7 @@ In this exercise, you securely used a service identity to read the value of a se
 
 1.  In the **View files** tab, select **Add**.
 
-1.  In the filename dialog that appears, enter **function.proj**.
+1.  In the filename dialog that appears, enter **function.proj** and press Enter (displays an empty code editor).
 
 1.  In the file editor, insert this configuration content:
 
@@ -604,8 +604,6 @@ In this exercise, you securely used a service identity to read the value of a se
 1. In the editor, select **Save** button to persist your changes to the configuration.
 
     > **Note**: This **.proj** file contains the NuGet package reference necessary to import the [SixLabors.ImageSharp](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/11.0.0) package.
-
-1.  Select the **function.proj** file to view the contents of the file.
 
 1.  Select the **run.csx** file to return to the editor for the **FileParser** function.
 

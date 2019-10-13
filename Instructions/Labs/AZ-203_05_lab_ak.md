@@ -447,13 +447,13 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
 
 1.  On the left side of the **Visual Studio Code** window, in the **Explorer** pane, double-click the **Program.cs** file to open the file in the editor.
 
-1.  In the editor, add the following **using** block for the **System.Net.Http** namespace:
+1.  In the editor, add the following **using** directive for the **System.Net.Http** namespace:
 
     ```
     using System.Net.Http;
     ```
 
-1.  In the editor, add the following **using** block for the **System.Threading.Tasks** namespace:
+1.  In the editor, add the following **using** directive for the **System.Threading.Tasks** namespace:
 
     ```
     using System.Threading.Tasks;

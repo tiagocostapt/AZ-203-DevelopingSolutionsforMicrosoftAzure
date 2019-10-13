@@ -613,13 +613,13 @@ In this exercise, you securely used a service identity to read the value of a se
 
 1. Within the editor, delete the existing code within the **Run** method of the script.
 
-1. At the top of the code file, add the following line of code to create a **using** block for the **Microsoft.Azure.Storage** namespace:
+1. At the top of the code file, add the following line of code to create a **using** directive for the **Microsoft.Azure.Storage** namespace:
 
     ```
     using Microsoft.Azure.Storage;
     ```
 
-1. Add the following line of code to create a **using** block for the **Microsoft.Azure.Storage.Blob** namespace:
+1. Add the following line of code to create a **using** directive for the **Microsoft.Azure.Storage.Blob** namespace:
 
     ```
     using Microsoft.Azure.Storage.Blob;

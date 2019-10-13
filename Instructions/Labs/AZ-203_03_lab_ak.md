@@ -631,7 +631,7 @@ In this exercise, you configured your ASP.NET Core web application to connect to
     using Microsoft.EntityFrameworkCore;
     ```
 
-1.  Add the following lines of code to add using blocks for built-in namespaces that will be used in this file:
+1.  Add the following lines of code to add **using** directives for built-in namespaces that will be used in this file:
 
     ```
     using System;
@@ -922,7 +922,7 @@ In this exercise, you used Entity Framework and the .NET SDK for Azure Cosmos DB
     using Microsoft.Azure.Cosmos.Linq;
     ```
 
-1.  Add the following lines of code to add using blocks for built-in namespaces that will be used in this file:
+1.  Add the following lines of code to add **using** directives for built-in namespaces that will be used in this file:
 
     ```
     using System;
@@ -1244,7 +1244,7 @@ In this exercise, you wrote C# code to query an Azure Cosmos DB collection using
     using StackExchange.Redis;
     ```
 
-1.  Add the following lines of code to add using blocks for built-in namespaces that will be used in this file:
+1.  Add the following lines of code to add **using** directives for built-in namespaces that will be used in this file:
 
     ```
     using System;

@@ -332,39 +332,7 @@ In this exercise, you created a server-assigned managed service identity for you
 
 ### Exercise 3: Write function app code 
 
-#### Task 1: Create a .NET Core application setting
-
-1.  On the navigation menu located on the left side of the portal, select the **Resource groups** link.
-
-1.  In the **Resource groups** blade, locate and select the **SecureFunction** resource group that you created earlier in this lab.
-
-1.  In the **SecureFunction** blade, select the **securefunc\*** function app that you created earlier in this lab.
-
-1.  In the **Function App** blade, select the **Platform features** tab.
-
-1.  In the **Platform features** tab, select the **Configuration** link located in the **General Settings** section.
-
-1.  In the **Configuration** section, perform the following actions:
-    
-    1.  Select the **Application settings** tab.
-    
-    1.  Select **+ New application setting**.
-    
-    1.  In the **Add/Edit application setting** popup that appears, in the **Name** field, enter **DOTNET_SKIP_FIRST_TIME_EXPERIENCE**.
-    
-    1.  In the **Value** field, enter **true**.
-
-        > **Note**: The ``DOTNET_SKIP_FIRST_TIME_EXPERIENCE`` application setting tells .NET Core to disable it's built-in NuGet package caching mechanisms. On a temporary compute instance, this would effectively be a waste of time and cause build issues with your Azure Function.
-    
-    1.  Leave the **deployment slot setting** field set to its default value.
-
-    1.  Select **OK** to close the popup and return to the **Configuration** section.
-    
-    1.  Select **Save** at the top of the blade to persist your settings.
-
-1.  Wait for your application settings to persist before you move forward with the lab.
-
-#### Task 2: Create a Key Vault-derived application setting 
+#### Task 1: Create a Key Vault-derived application setting 
 
 1.  On the navigation menu located on the left side of the portal, select the **Resource groups** link.
 
@@ -386,7 +354,7 @@ In this exercise, you created a server-assigned managed service identity for you
     
     1.  In the **Value** field, construct a value by using the following syntax: **@Microsoft.KeyVault(SecretUri=\<Secret Identifier\>)**
 
-      > **Note**: You will need to build a reference to your **Secret Identifier** by using the above syntax. For example, if your Secret Identifier is **https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf**, then your value would be **@Microsoft.KeyVault(SecretUri= https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf)**
+      > **Note**: You will need to build a reference to your **Secret Identifier** by using the above syntax. For example, if your Secret Identifier is **https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf**, then your value would be **@Microsoft.KeyVault(SecretUri=https://securevaultstudent.vault.azure.net/secrets/storagecredentials/17b41386df3e4191b92f089f5efb4cbf)**
     
     1.  Leave the **deployment slot setting** field set to its default value.
 
@@ -396,7 +364,7 @@ In this exercise, you created a server-assigned managed service identity for you
 
 1.  Wait for your application settings to persist before you move forward with the lab.
 
-#### Task 3: Create a HTTP-triggered function
+#### Task 2: Create a HTTP-triggered function
 
 1.  On the navigation menu located on the left side of the portal, select the **Resource groups** link.
 
@@ -404,7 +372,7 @@ In this exercise, you created a server-assigned managed service identity for you
 
 1.  In the **SecureFunction** blade, select the **securefunc\*** function app that you created earlier in this lab.
 
-1.  In the **Function App** blade, click **+** next to the **Functions** dropdown.
+1.  In the **Function App** blade, click **+** next to the **Functions** drop-down.
 
 1.  In the **New Azure Function** quickstart, perform the following actions:
     
@@ -473,7 +441,7 @@ In this exercise, you created a server-assigned managed service identity for you
 
 1. Observe the **Output** text box in the **Test** pane. You should now see the value **Test Successful** returned from the function.
 
-#### Task 4: Test the Key Vault-derived application setting
+#### Task 3: Test the Key Vault-derived application setting
 
 1.  Delete the existing code within the **Run** method of the script.
 
@@ -618,43 +586,50 @@ In this exercise, you securely used a service identity to read the value of a se
             <TargetFramework>netstandard2.0</TargetFramework>
         </PropertyGroup>
         <ItemGroup>
-            <PackageReference Include="Microsoft.Azure.Storage.Blob" Version="11.0.0" />
+            <PackageReference Include="Azure.Storage.Blobs" Version="12.0.0" />
         </ItemGroup>
     </Project>
     ```
 
 1. In the editor, select **Save** button to persist your changes to the configuration.
 
-    > **Note**: This **.proj** file contains the NuGet package reference necessary to import the [SixLabors.ImageSharp](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/11.0.0) package.
+    > **Note**: This **.proj** file contains the NuGet package reference necessary to import the [Azure.Storage.Blobs](https://www.nuget.org/packages/Azure.Storage.Blobs/12.0.0) package.
 
 1.  Select the **run.csx** file to return to the editor for the **FileParser** function.
 
-1. Minimize the **View files** tab.
+1.  Minimize the **View files** tab.
 
     > **Note**: You can minimize the tab by selecting the arrow immediately to the right of the tab header.
 
-1. Within the editor, delete the existing code within the **Run** method of the script.
+1.  Within the editor, delete the existing code within the **Run** method of the script.
 
-1. At the top of the code file, add the following line of code to create a **using** directive for the **Microsoft.Azure.Storage** namespace:
-
-    ```
-    using Microsoft.Azure.Storage;
-    ```
-
-1. Add the following line of code to create a **using** directive for the **Microsoft.Azure.Storage.Blob** namespace:
+1.  At the top of the code file, add the following line of code to create a **using** directive for the **Azure.Storage** namespace:
 
     ```
-    using Microsoft.Azure.Storage.Blob;
+    using Azure.Storage;
     ```
 
-1. The **Run** method should now look like this:
+1.  At the top of the code file, add the following line of code to create a **using** directive for the **Azure.Storage.Blobs** namespace:
+
+    ```
+    using Azure.Storage.Blobs;
+    ```
+
+1.  Add the following line of code to create a **using** directive for the **Azure.Storage.Blobs.Models** namespace:
+
+    ```
+    using Azure.Storage.Blobs.Models;
+    ```
+
+1.  The **Run** method should now look like this:
 
     ```
     using System.Net;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Azure.Storage;
-    using Microsoft.Azure.Storage.Blob;
-    
+    using Azure.Storage;
+    using Azure.Storage.Blobs;
+    using Azure.Storage.Blobs.Models;
+
     public static async Task<IActionResult> Run(HttpRequest req)
     {
 
@@ -669,28 +644,22 @@ In this exercise, you securely used a service identity to read the value of a se
     string connectionString = Environment.GetEnvironmentVariable("StorageConnectionString");
     ```
 
-1.  Add the following line of code to create a new instance of the **CloudStorageAccount** class by using the **CloudStorageAccount.Parse** static method, passing in your *connectionString* variable:
+1.  Add the following line of code to create a new instance of the **BlobServiceClient** class by passing in your *connectionString* variable to the constructor:
 
     ```
-    CloudStorageAccount account = CloudStorageAccount.Parse(connectionString);
+    BlobServiceClient serviceClient = new BlobServiceClient(connectionString);
     ```
 
-1.  Add the following line of code to use the **CloudStorageAccount.CreateCloudBlobClient** method to create a new instance of the **CloudBlobClient** class that will give you access to blobs in your storage account:
+1.  Add the following line of code to use the **BlobServiceClient.GetBlobContainerClient** method, while passing in the **drop** container name to create a new instance of the **BlobContainerClient** class that references the container that you created earlier in this lab:
 
     ```
-    CloudBlobClient blobClient = account.CreateCloudBlobClient();
+    BlobContainerClient containerClient = serviceClient.GetBlobContainerClient("drop");
     ```
 
-1.  Add the following line of code to use the **CloudBlobClient.GetContainerReference** method, while passing in the **drop** container name to create a new instance of the **CloudBlobContainer** class that references the container that you created earlier in this lab:
+1.  Add the following line of code to use the **BlobContainerClient.GetBlobClient** method, while passing in the **records.json** blob name to create a new instance of the **BlobClient** class that references the blob that you uploaded earlier in this lab:
 
     ```
-    CloudBlobContainer container = blobClient.GetContainerReference("drop");
-    ```
-
-1.  Add the following line of code to use the **CloudBlobContainer.GetBlockBlobReference** method, while passing in the **records.json** blob name to create a new instance of the **CloudBlockBlob** class that references the blob that you uploaded earlier in this lab:
-
-    ```
-    CloudBlockBlob blob = container.GetBlockBlobReference("records.json");
+    BlobClient blobClient = containerClient.GetBlobClient("records.json");
     ```
     
 1.  The **Run** method should now look like this:
@@ -698,31 +667,31 @@ In this exercise, you securely used a service identity to read the value of a se
     ```
     using System.Net;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Azure.Storage;
-    using Microsoft.Azure.Storage.Blob;
+    using Azure.Storage;
+    using Azure.Storage.Blobs;
+    using Azure.Storage.Blobs.Models;
 
     public static async Task<IActionResult> Run(HttpRequest req)
     {
         string connectionString = Environment.GetEnvironmentVariable("StorageConnectionString");
-        CloudStorageAccount account = CloudStorageAccount.Parse(connectionString);
-        CloudBlobClient blobClient = account.CreateCloudBlobClient();
-        CloudBlobContainer container = blobClient.GetContainerReference("drop");
-        CloudBlockBlob blob = container.GetBlockBlobReference("records.json");
+        BlobServiceClient serviceClient = new BlobServiceClient(connectionString);
+        BlobContainerClient containerClient = serviceClient.GetBlobContainerClient("drop");
+        BlobClient blobClient = containerClient.GetBlobClient("records.json");
     }
     ```
 
 #### Task 4: Download a blob
 
-1.  Add the following line of code to use the **CloudBlockBlob.DownloadTextAsync** method to download the contents of the referenced blob asynchronously and store the result in a string variable named *content*:
+1.  Add the following line of code to use the **BlobClient.DownloadAsync** method to download the contents of the referenced blob asynchronously and store the result in a variable named *response*:
 
     ```
-    string content = await blob.DownloadTextAsync();
+    var response = await blobClient.DownloadAsync();
     ```
 
-1.  Add the following line of code to return the value of the *content* variable by using the **OkObjectResult** class constructor:
+1.  Add the following line of code to return the various content stored in the *content* variable by using the **FileStreamResult** class constructor:
 
     ```
-    return new OkObjectResult(content);
+    return new FileStreamResult(response?.Value?.Content, response?.Value?.ContentType);
     ```
 
 1.  The **Run** method should now look like this:
@@ -730,18 +699,18 @@ In this exercise, you securely used a service identity to read the value of a se
     ```
     using System.Net;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Azure.Storage;
-    using Microsoft.Azure.Storage.Blob;
+    using Azure.Storage;
+    using Azure.Storage.Blobs;
+    using Azure.Storage.Blobs.Models;
 
     public static async Task<IActionResult> Run(HttpRequest req)
     {
         string connectionString = Environment.GetEnvironmentVariable("StorageConnectionString");
-        CloudStorageAccount account = CloudStorageAccount.Parse(connectionString);
-        CloudBlobClient blobClient = account.CreateCloudBlobClient();
-        CloudBlobContainer container = blobClient.GetContainerReference("drop");
-        CloudBlockBlob blob = container.GetBlockBlobReference("records.json");
-        string content = await blob.DownloadTextAsync();
-        return new OkObjectResult(content);
+        BlobServiceClient serviceClient = new BlobServiceClient(connectionString);
+        BlobContainerClient containerClient = serviceClient.GetBlobContainerClient("drop");
+        BlobClient blobClient = containerClient.GetBlobClient("records.json");
+        var response = await blobClient.DownloadAsync();
+        return new FileStreamResult(response?.Value?.Content, response?.Value?.ContentType);
     }
     ```
 

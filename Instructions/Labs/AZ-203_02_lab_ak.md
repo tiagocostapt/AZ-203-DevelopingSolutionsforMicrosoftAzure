@@ -138,9 +138,9 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 
 1.  In the **ManagedPlatform** blade, select the **imgstor\*** storage account you created earlier in this lab.
 
-1.  In the **Storage Account** blade, on the left side of the blade, in the **Blob service** section, select the **Blobs** link.
+1.  In the **Storage Account** blade, on the left side of the blade, in the **Blob service** section, select the **Containers** link.
 
-1.  In the **Blobs** section, select **+ Container**.
+1.  In the **Containers** section, select **+ Container**.
 
 1.  In the **New container** window, perform the following actions:
     
@@ -150,7 +150,7 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
     
     1.  Select **OK**.
 
-1.  In the **Blobs** section, select **+ Container** again.
+1.  In the **Containers** section, select **+ Container** again.
 
 1.  In the **New container** window, perform the following actions:
 
@@ -160,7 +160,7 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 
     1.  Select **OK**.
 
-1.  In the **Blobs** section, select the newly created **images** container.
+1.  In the **Containers** section, select the newly created **images** container.
 
 1. In the **Container** blade, select **Upload**.
 
@@ -752,9 +752,9 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
 
 1.  In the **ManagedPlatform** blade, select the **imgstor\*** storage account that you created earlier in this lab.
 
-1.  In the **Storage Account** blade, on the left side of the blade, in the **Blob service** section, select the **Blobs** link.
+1.  In the **Storage Account** blade, on the left side of the blade, in the **Blob service** section, select the **Containers** link.
 
-1.  In the **Blobs** section, select the **images** container.
+1.  In the **Containers** section, select the **images** container.
 
 1.  In the **Container** blade, select **Upload**.
 
@@ -772,7 +772,7 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
 
 1.  Close the **Container** blade.
 
-1. Back in the **Blobs** section, select the **images-thumbnails** container.
+1. Back in the **Containers** section, select the **images-thumbnails** container.
 
 1. In the **Container** blade, observe the newly created **veggie.jpg** file in the **images-thumbnails** container.
 

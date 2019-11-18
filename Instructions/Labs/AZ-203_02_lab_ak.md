@@ -381,6 +381,8 @@ In this exercise, you created an API App in Azure and then deployed your ASP.NET
     1.  In the **Add/Edit application setting** popup that appears, in the **Name** field, enter **ApiUrl**.
     
     1.  In the **Value** field, enter the API app **URL** you copied earlier in this lab.
+
+        > **Note**: Make sure you include the protocol (ex. *https://*) in the URL you copy into the value field for this application setting.
     
     1.  Leave the **deployment slot setting** field set to its default value.
 

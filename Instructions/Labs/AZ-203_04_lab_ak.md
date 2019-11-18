@@ -510,9 +510,9 @@ In this exercise, you securely used a service identity to read the value of a se
 
 1.  In the **SecureFunction** blade, select the **securestor\*** storage account that you created earlier in this lab.
 
-1.  In the **Storage account** blade, select the **Blobs** link located in the **Blob service** section on the left side of the blade.
+1.  In the **Storage account** blade, select the **Containers** link located in the **Blob service** section on the left side of the blade.
 
-1.  In the **Blobs** section, select **+ Container**.
+1.  In the **Containers** section, select **+ Container**.
 
 1.  In the **New container** pop-up, perform the following actions:
     
@@ -522,7 +522,7 @@ In this exercise, you securely used a service identity to read the value of a se
     
     1.  Select **OK**.
 
-1.  Back in the **Blobs** section, select the newly created **drop** container.
+1.  Back in the **Containers** section, select the newly created **drop** container.
 
 1.  In the **Container** blade, select **Upload**.
 

@@ -142,23 +142,27 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 
 1.  In the **Key Vault** blade, select **Create**.
 
-1.  In the **Create key vault** blade, perform the following actions:
-    
-    1.  In the **Name** text box, enter **securevault\[your name in lowercase\]**.
+1.  In the **Create key vault** blade, observe the tabs at the top of the blade, such as **Basics**.
+
+  > **Note**: Each tab represents a step in the workflow to create a new **key vault**. At any time, you can select **Review + create** to skip the remaining tabs.
+
+1.  In the **Basics** tab, perform the following actions:
     
     1.  Leave the **Subscription** text box set to its default value.
     
-    1.  In the **Resource group** section, select **Use existing**, and then select **SecureFunction** from the list.
+    1.  In the **Resource group** section, **Use existing**, and then select **SecureFunction** from the list.
     
-    1.  In the **Location** drop-down list, select **East US**.
+    1.  In the **Key vault name** text box, enter **securevault\[your name in lowercase\]**.
+
+    1.  In the **Region** drop-down list, select the **East US** region.
+        
+    1.  In the **Pricing tier** drop-down list, select **Standard**.
     
-    1.  Leave the **Pricing tier** text box set to its default value.
-    
-    1.  Leave the **Access policies** text box set to its default value.
-    
-    1.  Leave the **Virtual Network Access** text box set to its default value.
-    
-    1.  Select **Create**.
+    1.  Select **Review + Create**.
+
+1.  In the **Review + Create** tab, review the options that you selected during the previous steps.
+
+1.  Select **Create** to create the key vault by using your specified configuration.
 
 1.  Wait for the creation task to complete before you move forward with this lab.
 
@@ -174,27 +178,45 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 
 1.  In the **Function App** blade, select **Create**.
 
-1.  In the **Create function app** blade, perform the following actions:
-    
-    1.  In the **App name** text box, enter **securefunc\[your name in lowercase\]**.
+1.  In the **Function App** blade, observe the tabs at the top of the blade, such as **Basics**.
+
+  > **Note**: Each tab represents a step in the workflow to create a new **function app**. At any time, you can select **Review + create** to skip the remaining tabs.
+
+1.  In the **Basics** tab, perform the following actions:
     
     1.  Leave the **Subscription** text box set to its default value.
     
-    1.  In the **Resource group** section, select **Use existing**, and then select **SecureFunction** from the list.
+    1.  In the **Resource group** section, **Use existing**, and then select **SecureFunction** from the list.
     
-    1.  In the **OS** section, select **Windows**.
+    1.  In the **Function app name** text box, enter **securefunc\[your name in lowercase\]**.
+
+    1.  In the **Publish** section, select **Code**.
+
+    1.  In the **Runtime stack** drop-down list, select **.NET Core**.
+
+    1.  In the **Region** drop-down list, select the **East US** region.
     
-    1.  In the **Hosting Plan** drop-down list, select **Consumption Plan**.
-    
-    1.  In the **Location** drop-down list, select **East US**.
-    
-    1.  In the **Runtime Stack** drop-down list, select **.NET Core**.
-    
-    1.  In the **Storage** section, select **Use existing**, and then select **securestor\[your name in lowercase\]** from the list.
-    
-    1.  Leave the **Application Insights** option set to its default value.
-    
-    1. Select **Create**.
+    1.  Select **Next: Hosting**.
+
+1.  In the **Hosting** tab, perform the following actions:
+
+    1.  In the **Storage account** drop-down list, select the **securestor\*** Storage account that you created earlier in this lab.
+
+    1.  In the **Operating System** section, select **Windows**.
+
+    1.  In the **Plan type** drop-down list, select the **Consumption** option.
+
+    1.  Select **Next: Monitoring**.
+
+1.  In the **Monitoring** tab, perform the following actions:
+
+    1.  In the **Enable Application Insights** section, select **No**.
+
+    1.  Select **Review + Create**.
+
+1.  In the **Review + Create** tab, review the options that you selected during the previous steps.
+
+1.  Select **Create** to create the function app by using your specified configuration.
 
 1.  Wait for the creation task to complete before you move forward with this lab.
 

@@ -266,9 +266,9 @@ In this exercise, you created all the Azure resources that you will need for a p
 
 1.  In the **PolyglotData** blade, select the **polystor\*** storage account that you created earlier in this lab.
 
-1.  In the **Storage account** blade, select the **Blobs** link located in the **Blob service** section on the left side of the blade.
+1.  In the **Storage account** blade, select the **Containers** link located in the **Blob service** section on the left side of the blade.
 
-1.  In the **Blobs** section, select **+ Container**.
+1.  In the **Containers** section, select **+ Container**.
 
 1.  In the **New container** pop-up, perform the following actions:
     
@@ -278,7 +278,7 @@ In this exercise, you created all the Azure resources that you will need for a p
     
     1.  Select **OK**.
 
-1.  Back in the **Blobs** section, select the newly created **images** container.
+1.  Back in the **Containers** section, select the newly created **images** container.
 
 1.  In the **Container** blade, locate the **Settings** section on the left side of the blade and select the **Properties** link.
 
@@ -308,9 +308,9 @@ In this exercise, you created all the Azure resources that you will need for a p
 
 1.  In the **PolyglotData** blade, select the **polystor\*** storage account that you created earlier in this lab.
 
-1.  In the **Storage account** blade, select the **Blobs** link located in the **Blob service** section on the left side of the blade.
+1.  In the **Storage account** blade, select the **Containers** link located in the **Blob service** section on the left side of the blade.
 
-1.  In the **Blobs** section, select **+ Container**.
+1.  In the **Containers** section, select **+ Container**.
 
 1.  In the **New container** pop-up, perform the following actions:
     
@@ -320,7 +320,7 @@ In this exercise, you created all the Azure resources that you will need for a p
     
     1.  Select **OK**.
 
-1.  Back in the **Blobs** section, select the newly created **databases** container.
+1.  Back in the **Containers** section, select the newly created **databases** container.
 
 1.  In the **Container** blade, select **Upload**.
 

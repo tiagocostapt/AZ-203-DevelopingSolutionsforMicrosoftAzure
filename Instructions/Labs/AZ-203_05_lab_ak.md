@@ -94,21 +94,25 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 
 1.  In the **Application Insights** blade, select **Create**.
 
-1.  In the second **Application Insights** blade, perform the following actions:
-    
-    1.  Leave the **Subscription** field set to its default value.
-    
-    1.  In the **Resource group** section, select **Create new**, and then enter **MonitoredAssets**.
-    
-    1.  In the **Name** field, enter **instrm\[*your name in lowercase*\]**.
+1.  In the second **Application Insights** blade, locate the tabs in the blade, such as **Basics**.
 
-    1.  In the **Location** list, select **(US) East US**.
+    > **Note**: Each tab represents a step in the workflow to create a new **Application Insights instance**. At any time, you can select **Review + create** to skip the remaining tabs.
+
+1.  In the **Basics** tab, perform the following actions:
     
-    1.  Select **Review + create**
+    1.  Leave the **Subscription** text box set to its default value.
     
-    1.  Review the options that you entered in the previous steps.
+    1.  In the **Resource group** section, select **Create new**, enter **MonitoredAssets**, and then select **OK**.
     
-    1. Select **Create**.
+    1.  In the **Name** text box, enter **instrm\[your name in lowercase\]**.
+    
+    1.  In the **Location** drop-down list, select the **(US) East US** region.
+    
+    1.  Select **Review + Create**.
+
+1.  In the **Review + Create** tab, review the options that you selected during the previous steps.
+
+1.  Select **Create** to create the Application Insights instance by using your specified configuration.
 
 1.  Wait for the creation task to complete before you move forward with this lab.
 
@@ -122,67 +126,63 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 
 1. In the **Properties** section, observe the value of the **Instrumentation Key** field. This key is used by client applications to connect to Application Insights.
 
-#### Task 3: Create an API App resource
+#### Task 3: Create an Web App resource
 
 1.  In the left navigation pane of the portal, select **+ Create a resource**.
 
 1.  At the top of the **New** blade, locate the **Search the Marketplace** field.
 
-1.  In the search field, enter **API** and press Enter.
+1.  In the search field, enter **Web** and press Enter.
 
-1.  In the **Everything** search results blade, select the **API App** result.
+1.  In the **Everything** search results blade, select the **Web App** result.
 
-1.  In the **API App** blade, select **Create**.
+1.  In the **Web App** blade, select **Create**.
 
-1.  In the second **API App** blade, perform the following actions:
-    
-    1.  In the **App name** field, enter **smpapi\[*your name in lowercase*\]**.
-    
-    1.  Leave the **Subscription** field set to its default value.
-    
-    1.  In the **Resource group** section, select **Use existing**, and then select **MonitoredAssets**.
-    
-    1.  Select the **App Service plan/Location** field.
+1.  In the second **Web App** blade, locate the tabs in the blade, such as **Basics**.
 
-1.  In the **App Service plan** blade, select **Create new**.
+    > **Note**: Each tab represents a step in the workflow to create a new **Web App**. At any time, you can select **Review + create** to skip the remaining tabs.
 
-1.  In the **New App Service Plan** blade, perform the following actions:
+1.  In the **Basics** tab, perform the following actions:
     
-    1.  In the **App Service plan** field, enter **MonitoredPlan**.
+    1.  Leave the **Subscription** text box set to its default value.
     
-    1.  In the **Location** list, select the **East US** location.
+    1.  In the **Resource group** drop-down list, select **MonitoredAssets**.
     
-    1.  Set the **Pricing tier** field to the value **S1 Standard**.
-    
-    1.  Select **OK**.
+    1.  In the **Name** text box, enter **smpapi\[your name in lowercase\]**.
 
-1.  Back in the **Api App** blade, select the **Application Insights** field.
+    1.  In the **Publish** section, select **Code**.
 
-1. In the **Application Insights** blade, perform the following actions:
-    
-    1.  In the **Application Insights** section, select **Enable**.
-    
-    1. In the **Change your resource** section, select **Select existing resource** and then select the **instrm\*** Application Insights account that you created earlier in this lab.
-    
-    1. In the **Instrument your application** section, select the **.NET Core** tab and then select **Recommended**.
+    1.  In the **Runtime stack** drop-down list, select **.NET Core 3.0 (current)**.
 
-    1. In the **Profiler** section, select **On**.
+    1.  In the **Operating System** section, select **Windows**.
 
-    1. In the **Snapshot debugger** section, select **On**.
+    1.  In the **Region** drop-down list, select the **East US** region.
 
-    1. In the **SQL Commands** section, select **On**.
-    
-    1. Select **Apply**.
+    1.  In the **Windows Plan (East US)** section, select **Create new**, enter the value **MonitoredPlan** into the **Name** text box, and then select **OK**.
 
-1. Back in the **Api App** blade, select **Create**.
+    1.  Leave the **Sku and size** section set to its default value.
 
-1. Wait for the creation task to complete before you move forward with this lab.
+    1.  Select **Next: Monitoring**.
+
+1.  In the **Monitoring** tab, perform the following actions:
+
+    1.  In the **Enable Application Insights** section, select **Yes**.
+
+    1.  In the **Application Insights** drop-down list, select the **instrm\*** Application Insights account that you created earlier in this lab.
+
+    1.  Select **Review + Create**.
+
+1.  In the **Review + Create** tab, review the options that you selected during the previous steps.
+
+1.  Select **Create** to create the Web App by using your specified configuration.
+
+1.  Wait for the creation task to complete before you move forward with this lab.
 
 1. In the left navigation pane of the portal, select **Resource groups**.
 
 1. In the **Resource groups** blade, select the **MonitoredAssets** resource group that you created earlier in this lab.
 
-1. In the **MonitoredAssets** blade, select the **smpapi\*** API app you that created earlier in this lab.
+1. In the **MonitoredAssets** blade, select the **smpapi\*** Web App you that created earlier in this lab.
 
 1. In the **App Service** blade, on the left side of the blade, within the **Settings** category, select the **Configuration** link.
 
@@ -192,19 +192,19 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 
     1.  Select **Show Values** to view the secrets associated with your API.
 
-    1.  Observe the value corresponding to the **APPINSIGHTS\_INSTRUMENTATIONKEY** key. This value was set automatically when you built your API App resource.
+    1.  Observe the value corresponding to the **APPINSIGHTS\_INSTRUMENTATIONKEY** key. This value was set automatically when you built your Web App resource.
 
 1. In the **App Service** blade, on the left side of the blade within the **Settings** category, select the **Properties** link.
 
 1. In the **Properties** section, record the value of the **URL** field. You will use this value later in the lab to make requests against the API.
 
-#### Task 4: Configure API App auto-scale options
+#### Task 4: Configure Web App auto-scale options
 
 1.  In the **App Service** blade, on the left side of the blade, within the **Settings** category, select the **Scale out (App Service Plan)** link.
 
 1.  In the **Scale out** section, perform the following actions:
     
-    1.  Select **Enable autoscale**.
+    1.  Select **Custom autoscale**.
     
     1.  In the **Autoscale setting name** field, enter **ComputeScaler**.
     
@@ -218,7 +218,7 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
     
     1.  In the **Default** field within the **Instance limits** section, enter **3**.
     
-    1.  Select **+ Add a rule**. In the **Scale rule** window that appears, leave all fields set to their default values and then select **Add**.
+    1.  Select **+ Add a rule**. In the **Scale rule** popup that appears, leave all fields set to their default values and then select **Add**.
     
     1.  At the top of the section, select **Save**.
 
@@ -246,10 +246,10 @@ In this exercise, you created the resources that you will use for the remainder 
     dotnet new webapi --output . --name SimpleApi
     ```
 
-1.  In the command prompt, enter the following command and press Enter to add the **2.7.1** version of the **Microsoft.ApplicationInsights.AspNetCore** package from NuGet to the current project:
+1.  In the command prompt, enter the following command and press Enter to add the **2.8.2** version of the **Microsoft.ApplicationInsights.AspNetCore** package from NuGet to the current project:
 
     ```
-    dotnet add package Microsoft.ApplicationInsights.AspNetCore --version 2.7.1
+    dotnet add package Microsoft.ApplicationInsights.AspNetCore --version 2.8.2
     ```
 
 1.  In the command prompt, enter the following command and press Enter to build the .NET Core web application:
@@ -260,35 +260,48 @@ In this exercise, you created the resources that you will use for the remainder 
     
 #### Task 2: Update application code to disable HTTPS and use Application Insights
 
-1.  On the left side of the **Visual Studio Code** window, in the **Explorer** pane, double-click the **Program.cs** file to open the file in the editor.
-
-1.  In the editor, in the **Program** class, locate the following block of code at line **20**:
-
-    ```
-    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
-    ```
-1.  Replace that block of code with the following block of code that enables **Application Insights** telemetry for the project:
-
-    ```
-    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .UseApplicationInsights();
-    ```
-
-1.  **Save** the **Program.cs** file.
-
 1.  On the left side of the **Visual Studio Code** window, in the **Explorer** pane, double-click the **Startup.cs** file to open the file in the editor.
 
-1.  In the editor, in the **Program** class, locate and delete the following line of code at line **43**:
+1.  In the editor, in the **Startup** class, locate and delete the following line of code at line **43**:
 
     ```
     app.UseHttpsRedirection();
     ```
 
-    > **Note**: This line of code forces the API App to use HTTPS. For this lab, this is unnecessary.
+    > **Note**: This line of code forces the Web App to use HTTPS. For this lab, this is unnecessary.
+
+1.  Within the **Startup** class, add a new **static string constant** named **INSTRUMENTATION_KEY** with its value set to the **Instrumentation Key** you copied from the **Application Insights** resource you created earlier in this lab:
+
+    ```
+    private const string INSTRUMENTATION_KEY = "{your_instrumentation_key}";
+    ```
+
+    > **Note**: For example, if you **Instrumentation Key** is ``d2bb0eed-1342-4394-9b0c-8a56d21aaa43``, your line of code would be ``private const string INSTRUMENTATION_KEY = "d2bb0eed-1342-4394-9b0c-8a56d21aaa43";``
+
+1.  Locate the **ConfigureServices** method within the **Startup** class:
+
+    ```
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);        
+    }
+    ```
+
+1.  Add a new line of code at the end of the **ConfigureServices** method to configure Application Insights using the provided instrumentation key:
+
+    ```    
+    services.AddApplicationInsightsTelemetry(INSTRUMENTATION_KEY);
+    ```
+
+1.  Your **ConfigureServices** method should now look like this:
+
+    ```
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);   
+        services.AddApplicationInsightsTelemetry(INSTRUMENTATION_KEY);        
+    }
+    ```
 
 1.  **Save** the **Startup.cs** file.
 
@@ -329,9 +342,11 @@ In this exercise, you created the resources that you will use for the remainder 
 
 1.  In the **MonitoredAssets** blade, select the **instrm\*** Application Insights account that you created earlier in this lab.
 
-1.  In the **Application Insights** blade, in the tiles located in the center of the blade, observe the metrics displayed. Specifically, observe the number of **server** **requests** that have occurred and the average **server response time**.
+1.  In the **Application Insights** blade, in the tiles located in the center of the blade, observe the metrics displayed. Specifically, observe the number of **server requests** that have occurred and the average **server response time**.
 
-#### Task 5: Deploy an application to API App
+    > **Note**: It can take up to five minutes for the requests to show within the Application Insights metrics charts.
+
+#### Task 5: Deploy an application to Web App
 
 1.  On the taskbar, select the **Visual Studio Code** icon.
 
@@ -383,13 +398,13 @@ In this exercise, you created the resources that you will use for the remainder 
     cd F:\Allfiles\Labs\05\Starter\
     ```
 
-1. Enter the following command and press Enter to deploy the **api.zip** file to the **API app** that you created earlier in this lab:
+1. Enter the following command and press Enter to deploy the **api.zip** file to the **Web App** that you created earlier in this lab:
 
     ```
     az webapp deployment source config-zip --resource-group MonitoredAssets --src api.zip --name <name-of-your-api-app>
     ```
 
-    > **Note**: Replace the **\<name-of-your-api-app\>** placeholder with the name of the API app that you created earlier in this lab. You recently queried this app’s name in the previous steps.
+    > **Note**: Replace the **\<name-of-your-api-app\>** placeholder with the name of the Web App that you created earlier in this lab. You recently queried this app’s name in the previous steps.
 
 1. Wait for the deployment to complete before you move forward with this lab.
 
@@ -399,7 +414,7 @@ In this exercise, you created the resources that you will use for the remainder 
 
 1. In the **Resource groups** blade, select the **MonitoredAssets** resource group that you created earlier in this lab.
 
-1. In the **MonitoredAssets** blade, select the **smpapi\*** API app that you created earlier in this lab.
+1. In the **MonitoredAssets** blade, select the **smpapi\*** Web App that you created earlier in this lab.
 
 1. In the **App Service** blade, select **Browse** at the top of the blade.
 
@@ -411,7 +426,7 @@ In this exercise, you created the resources that you will use for the remainder 
 
 #### Review
 
-In this exercise, you created an API by using ASP.NET Core and configured it to stream application metrics to Application Insights. You then used the Application Insights dashboard to view performance details about your API App and the API running in the app.
+In this exercise, you created an API by using ASP.NET Core and configured it to stream application metrics to Application Insights. You then used the Application Insights dashboard to view performance details about your Web App and the API running in the app.
 
 ### Exercise 3: Build a client application by using .NET Core
 
@@ -497,7 +512,7 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
     private const string _api = "";
     ```
 
-1.  Update the **\_api** constant by setting the value of the variable to the **URL** of the API app you recorded earlier in this lab:
+1.  Update the **\_api** constant by setting the value of the variable to the **URL** of the Web App you recorded earlier in this lab:
 
     > **Note**: For example, if your URL is http://smpapistudent.azurewebsites.net, the new line of code will be: private const string \_api = "http://smpapistudent.azurewebsites.net";
 
@@ -551,7 +566,7 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
     dotnet run
     ```
 
-1.  Observe that the application successfully invokes the API app in Azure and returns the same JSON array that you observed earlier in this lab. Your result should appear similar to the following JSON content:
+1.  Observe that the application successfully invokes the Web App in Azure and returns the same JSON array that you observed earlier in this lab. Your result should appear similar to the following JSON content:
 
     ```
     ["value1","value2"]
@@ -563,9 +578,9 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
 
 1.  In the **Resource groups** blade, locate and select the **MonitoredAssets** resource group that you created earlier in this lab.
 
-1.  In the **MonitoredAssets** blade, select the **smpapi\*** API app that you created earlier in this lab.
+1.  In the **MonitoredAssets** blade, select the **smpapi\*** Web App that you created earlier in this lab.
 
-1.  In the **App Service** blade, select **Stop** at the top of the blade to halt the execution of the API app.
+1.  In the **App Service** blade, select **Stop** at the top of the blade to halt the execution of the Web App.
 
 1.  In the **Stop web app** confirmation dialog box, select **Yes**.
 
@@ -597,7 +612,7 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
     at SimpleConsole.Program.Run() in F:\Allfiles\Labs\05\Starter\Console\Program.cs:line 20
     ```
 
-    > **Note**: This exception occurs because the API app is no longer available.
+    > **Note**: This exception occurs because the Web App is no longer available.
 
 #### Task 4: Add retry logic by using Polly
 
@@ -635,7 +650,7 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
     Failed Attempt
     ```
 
-1.  Leave the console application running. It will attempt to access the API app infinitely until it is successful.
+1.  Leave the console application running. It will attempt to access the Web App infinitely until it is successful.
 
 1.  Return to your currently open browser window displaying the **Azure portal**.
 
@@ -643,15 +658,15 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
 
 1.  In the **Resource groups** blade, locate and select the **MonitoredAssets** resource group that you created earlier in this lab.
 
-1.  In the **MonitoredAssets** blade, select the **smpapi\*** API app that you created earlier in this lab.
+1.  In the **MonitoredAssets** blade, select the **smpapi\*** Web App that you created earlier in this lab.
 
-1.  In the **App Service** blade, select **Start** at the top of the blade to resume the API app.
+1.  In the **App Service** blade, select **Start** at the top of the blade to resume the Web App.
 
 1.  In the **Stop web app** confirmation dialog box, select **Yes**.
 
 1. Return to the currently running **Visual Studio Code** application.
 
-1. Observe that the application finally successfully invokes the API app in Azure and returns the same JSON array that you observed earlier in this lab. Your result should resemble the following JSON content:
+1. Observe that the application finally successfully invokes the Web App in Azure and returns the same JSON array that you observed earlier in this lab. Your result should resemble the following JSON content:
 
     ```
     ["value1","value2"]
@@ -661,11 +676,11 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
 
 #### Review
 
-In this exercise, you created a console application to access your API by using conditional retry logic. The application continued to work regardless of whether the API App was available.
+In this exercise, you created a console application to access your API by using conditional retry logic. The application continued to work regardless of whether the Web App was available.
 
-### Exercise 4: Load test API app
+### Exercise 4: Load test Web App
 
-#### Task 1: Run a performance test on an API app
+#### Task 1: Run a performance test on an Web App
 
 1.  Return to your currently open browser window displaying the **Azure portal**.
 
@@ -673,7 +688,7 @@ In this exercise, you created a console application to access your API by using 
 
 1.  In the **Resource groups** blade, locate and select the **MonitoredAssets** resource group that you created earlier in this lab.
 
-1.  In the **MonitoredAssets** blade, select the **smpapi\*** API app that you created earlier in this lab.
+1.  In the **MonitoredAssets** blade, select the **smpapi\*** Web App that you created earlier in this lab.
 
 1.  In the **App Service** blade, on the left side of the blade within the **Development Tools** category, select **Performance test**.
 
@@ -709,7 +724,7 @@ In this exercise, you created a console application to access your API by using 
 
     > **Note**: Most load tests take about 10 to 15 minutes to gather the resources and start. You can wait at this blade because it will automatically refresh when the load testing is started.
 
-1. Wait for the load test to finish before you proceed with the lab. Observe the live chart updating as your API app experiences increased usage.
+1. Wait for the load test to finish before you proceed with the lab. Observe the live chart updating as your Web App experiences increased usage.
 
     > **Note**: The load test will take the 10 minutes you specified in the previous steps of the lab.
 
@@ -753,7 +768,7 @@ In this exercise, you created a console application to access your API by using 
 
 #### Review
 
-In this exercise, you performed a performance (load) test of your API app by using the tools available to you in Azure. After you performed the load test, you were able to measure your API app’s behavior by using metrics in the Azure Monitor interface.
+In this exercise, you performed a performance (load) test of your Web App by using the tools available to you in Azure. After you performed the load test, you were able to measure your API app’s behavior by using metrics in the Azure Monitor interface.
 
 ### Exercise 5: Clean up subscription 
 

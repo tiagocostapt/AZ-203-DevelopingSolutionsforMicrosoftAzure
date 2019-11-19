@@ -1499,6 +1499,16 @@ In this exercise, you used C# code to store and retrieve data from an Azure Cach
 
 1.  At the top of the portal, select the **Cloud Shell** icon to open a new shell instance.
 
+    > **Note**: The **Cloud Shell** icon is represented by a greater than symbol and underscore character.
+
+1.  If this is your first time opening the **Cloud Shell** by using your subscription, a **Welcome to Azure Cloud Shell Wizard** will appear that allows you to configure **Cloud Shell** for first-time usage. Perform the following actions in the wizard:
+    
+    1.  A dialog box will appear that prompts you to create a new Storage Account to begin using the shell. Accept the default settings and select **Create storage**.
+    
+    1.  Wait for the **Cloud Shell** to finish its first-time setup procedures before moving forward with the lab.
+
+    > **Note**: If you do not see the configuration options for the **Cloud Shell**, this is most likely because you are using an existing subscription with this course's labs. The labs are written from the presumption that you are using a new subscription.
+
 1.  In the **Cloud Shell** command prompt at the bottom of the portal, type in the following command and press Enter to list all resource groups in the subscription:
 
     ```

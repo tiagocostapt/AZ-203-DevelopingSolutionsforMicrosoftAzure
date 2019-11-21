@@ -2,7 +2,7 @@
 lab:
     title: 'Lab: Access resource secrets securely across services'
     type: 'Answer Key'
-    module: 'Module 4: Implement Azure security'
+    module: 'AZ-203T04-A: Implement Azure security'
 ---
 
 # Lab: Access resource secrets securely across services

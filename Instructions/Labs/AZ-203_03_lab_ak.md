@@ -837,9 +837,9 @@ In this exercise, you configured your ASP.NET Core web application to connect to
 
 1.  In the **PolyglotData** blade, select the **polycosmos\*** Azure Cosmos DB account that you created earlier in this lab.
 
-1.  In the **Azure Cosmos DB account** blade, locate and select the **Query Explorer** link on the left side of the blade.
+1.  In the **Azure Cosmos DB account** blade, locate and select the **Data Explorer** link on the left side of the blade.
 
-1.  In the **Query Explorer** pane, expand the **Retail** database node.
+1.  In the **Data Explorer** pane, expand the **Retail** database node.
 
 1.  Expand the **Online** container node.
 

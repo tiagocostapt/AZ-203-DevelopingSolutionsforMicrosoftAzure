@@ -100,19 +100,17 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
     
     1.  In the **Resource group** list, select **MultiTierService**.
     
-    1.  In the **Location** list, select **East US**.
+    1.  In the **Location** list, select **West US**.
     
     1.  In the **Organization name** field, enter **Contoso**.
     
     1.  Leave the **Administrator email** field set to its default value.
     
-    1.  In the **Pricing tier** list, select **Developer (No SLA)**.
+    1.  In the **Pricing tier** list, select **Consumption (99.9 SLA, %)**.
     
     1.  Select **Create**.
 
 1.  Wait for the creation task to complete before you move forward with this lab.
-
-    > **Note**: It usually takes between 20 and 30 minutes to create an API Management service.
 
 #### Task 3: Create an Azure Search account
 

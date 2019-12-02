@@ -698,7 +698,7 @@ In this exercise, you configured your ASP.NET Core web application to connect to
 
 1.  Select the **Trash Can** icon to dispose of the currently open terminal and any associated processes.
 
-#### Task 4: Get SQL database records using Entity Framework
+#### Task 3: Get SQL database records using Entity Framework
 
 1.  Within the **Main** method of the **Program** class within the **Program.cs** file, add the following line of code to create a new instance of the **AdventureWorksSqlContext** class passing in the **sqlDBConnectionString** variable as the connection string value:
 
@@ -740,7 +740,7 @@ In this exercise, you configured your ASP.NET Core web application to connect to
 
 1.  Select the **Trash Can** icon to dispose of the currently open terminal and any associated processes.
 
-#### Task 5: Insert items into Azure Cosmos DB
+#### Task 4: Insert items into Azure Cosmos DB
 
 1.  Within the **Main** method of the **Program** class within the **Program.cs** file, add the following line of code to create a new instance of the **CosmosClient** class passing in the **cosmosDBConnectionString** variable as the connection string value:
 
@@ -813,7 +813,7 @@ In this exercise, you configured your ASP.NET Core web application to connect to
 
     > **Note**: If there are any build errors, please review the **Program.cs** file located in the **Allfiles (F):\\Allfiles\\Labs\\03\\Solution\\AdventureWorks\\AdventureWorks.Migrate** folder.
 
-#### Task 6: Perform migration
+#### Task 5: Perform migration
 
 1.  In the open command prompt, enter the following command and press Enter to run the .NET Core web application:
 
@@ -827,7 +827,7 @@ In this exercise, you configured your ASP.NET Core web application to connect to
 
 1.  Select the **Trash Can** icon to dispose of the currently open terminal and any associated processes.
 
-#### Task 7: Validate migration
+#### Task 6: Validate migration
 
 1.  Return to the **Microsoft Edge** browser window showing the **Azure portal**.
 

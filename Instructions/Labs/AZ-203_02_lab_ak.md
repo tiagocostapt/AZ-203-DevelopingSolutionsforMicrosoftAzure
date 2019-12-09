@@ -492,39 +492,57 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
 
 #### Task 1: Create a function app
 
-1.  On the Azure portal left navigation pane, select **+ Create a resource**.
+1.  On the navigation menu located on the left side of the portal, select the **+ Create a resource** link.
 
-1.  At the top of the **New** blade, locate the **Search the Marketplace** field.
+1.  At the top of the **New** blade, locate the **Search the Marketplace** text box above the list of featured services.
 
-1.  In the search field, enter **Function** and press Enter.
+1.  In the search text box, enter **Function** and then press Enter.
 
 1.  In the **Everything** search results blade, select the **Function App** result.
 
 1.  In the **Function App** blade, select **Create**.
 
-1.  In the second **Function App** blade, perform the following actions:
-    
-    1.  In the **App name** field, enter **imgfunc\[*your name in lowercase*\]**.
-    
-    1.  Leave the **Subscription** field set to its default value.
-    
-    1.  In the **Resource group** section, select **Use existing**, and then select **ManagedPlatform**.
-    
-    1.  In the **OS** section, select **Windows**.
-    
-    1.  In the **Hosting Plan** list, select **Consumption Plan**.
-    
-    1.  In the **Location** list, select **East US**.
-    
-    1.  In the **Runtime Stack** list, select **.NET Core**.
-    
-    1.  In the **Storage** section, select **Use existing**, and then select the **imgstor\*** storage account you created earlier in this lab.
-    
-    1.  Leave the **Application Insights** field set to its default value.
-    
-    1. Select **Create**.
+1.  In the **Function App** blade, observe the tabs at the top of the blade, such as **Basics**.
 
-1.  Wait for the creation task to complete before moving on with this lab.
+  > **Note**: Each tab represents a step in the workflow to create a new **function app**. At any time, you can select **Review + create** to skip the remaining tabs.
+
+1.  In the **Basics** tab, perform the following actions:
+    
+    1.  Leave the **Subscription** text box set to its default value.
+    
+    1.  In the **Resource group** section, **Use existing**, and then select **ManagedResourceGroup** from the list.
+    
+    1.  In the **Function app name** text box, enter **imgfunc\[your name in lowercase\]**.
+
+    1.  In the **Publish** section, select **Code**.
+
+    1.  In the **Runtime stack** drop-down list, select **.NET Core**.
+
+    1.  In the **Region** drop-down list, select the **East US** region.
+    
+    1.  Select **Next: Hosting**.
+
+1.  In the **Hosting** tab, perform the following actions:
+
+    1.  In the **Storage account** drop-down list, select the **imgstor\*** Storage account that you created earlier in this lab.
+
+    1.  In the **Operating System** section, select **Windows**.
+
+    1.  In the **Plan type** drop-down list, select the **Consumption** option.
+
+    1.  Select **Next: Monitoring**.
+
+1.  In the **Monitoring** tab, perform the following actions:
+
+    1.  In the **Enable Application Insights** section, select **No**.
+
+    1.  Select **Review + Create**.
+
+1.  In the **Review + Create** tab, review the options that you selected during the previous steps.
+
+1.  Select **Create** to create the function app by using your specified configuration.
+
+1.  Wait for the creation task to complete before you move forward with this lab.
 
 #### Task 2: Create a .NET Core application setting
 

@@ -348,7 +348,7 @@ In this exercise, you created an API App in Azure and then deployed your ASP.NET
     
     1.  In the **Runtime stack** section, select **.NET Core 2.2**.
     
-    1.  In the **OS** section, select **Windows**.
+    1.  In the **OS** section, select **Linux**.
 
     1. In the **Region** drop-down list, select **East US**
     

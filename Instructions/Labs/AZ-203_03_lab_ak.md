@@ -450,7 +450,7 @@ In this exercise, you imported all of the resources you will use with your web a
 
 1.  On the **File** menu, select **Open Folder**.
 
-1.  In the File Explorer pane that opens, go to **Allfiles (F):\\Allfiles\\03\\Starter\\AdventureWorks**, and then select **Select Folder**.
+1.  In the File Explorer pane that opens, go to **Allfiles (F):\\Allfiles\\Labs\\03\\Starter\\AdventureWorks**, and then select **Select Folder**.
 
 1.  In the Visual Studio Code window, access the context menu or right-click the **Explorer** pane and then select **Open in Terminal**.
 

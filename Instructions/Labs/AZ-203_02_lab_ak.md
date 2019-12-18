@@ -46,19 +46,19 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 
 1.  In the PowerShell command prompt, change the current working directory to the **Allfiles (F):\\** path:
 
-    ```
+    ```powershell
     cd F:
     ```
 
 1.  Within the command prompt, enter the following command and press Enter to clone the **microsoftlearning/AZ-203-DevelopingSolutionsforMicrosoftAzure** project hosted on GitHub into the **Allfiles (F):\\** drive:
 
-    ```
+    ```powershell
     git clone --depth 1 --no-checkout https://github.com/microsoftlearning/AZ-203-DevelopingSolutionsForMicrosoftAzure .
     ```
 
 1.  Within the command prompt, enter the following command and press **Enter** to check out the lab files necessary to complete the **AZ-203T02** lab:
 
-    ```
+    ```powershell
     git checkout master -- Allfiles/*
     ```
 
@@ -256,7 +256,7 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 
 1.  In the open command prompt, enter the following command and press Enter to sign in to the Azure CLI:
 
-    ```
+    ```powershell
     az login
     ```
 
@@ -274,31 +274,31 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 
 1. At the command prompt, enter the following command and press Enter to list all the **apps** in your **ManagedPlatform** resource group:
 
-    ```
+    ```powershell
     az webapp list --resource-group ManagedPlatform
     ```
 
 1. Enter the following command and press Enter to find the **apps** that have the prefix **imgapi\***:
 
-    ```
+    ```powershell
     az webapp list --resource-group ManagedPlatform --query "[?starts_with(name, 'imgapi')]"
     ```
 
 1. Enter the following command and press Enter to print out only the name of the single app that has the prefix **imgapi\***:
 
-    ```
+    ```powershell
     az webapp list --resource-group ManagedPlatform --query "[?starts_with(name, 'imgapi')].{Name:name}" --output tsv
     ```
 
 1. Enter the following command and press Enter to change the current directory to the **Allfiles (F):\\Allfiles\\Labs\\02\\Starter\\API** directory that contains the lab files:
 
-    ```
+    ```powershell
     cd F:\Labfiles\02\Starter\API\
     ```
 
 1. Enter the following command and press Enter to deploy the **api.zip** file to the **API app** you created earlier in this lab:
 
-    ```
+    ```powershell
     az webapp deployment source config-zip --resource-group ManagedPlatform --src api.zip --name <name-of-your-api-app>
     ```
 
@@ -410,7 +410,7 @@ In this exercise, you created an API App in Azure and then deployed your ASP.NET
 
 1.  In the open command prompt, enter the following command and press Enter to sign in to the Azure CLI:
 
-    ```
+    ```powershell
     az login
     ```
 
@@ -428,31 +428,31 @@ In this exercise, you created an API App in Azure and then deployed your ASP.NET
 
 1. Enter the following command and press Enter to list all the **apps** in your **ManagedPlatform** resource group:
 
-    ```
+    ```powershell
     az webapp list --resource-group ManagedPlatform
     ```
 
 1. Enter the following command and press Enter to find the **apps** that have the prefix **imgweb\***:
 
-    ```
+    ```powershell
     az webapp list --resource-group ManagedPlatform --query "[?starts_with(name, 'imgweb')]"
     ```
 
 1. Enter the following command and press Enter to print out only the name of the single app that has the prefix **imgweb\***:
 
-    ```
+    ```powershell
     az webapp list --resource-group ManagedPlatform --query "[?starts_with(name, 'imgweb')].{Name:name}" --output tsv
     ```
 
 1. Enter the following command and press Enter to change the current directory to the **Allfiles (F):\\Allfiles\\Labs\\02\\Starter\\Web** directory that contains the lab files:
 
-    ```
+    ```powershell
     cd F:\Labfiles\02\Starter\Web\
     ```
 
 1. Enter the following command and press Enter to deploy the **web.zip** file to the **web app** you created earlier in this lab:
 
-    ```
+    ```powershell
     az webapp deployment source config-zip --resource-group ManagedPlatform --src web.zip --name <name-of-your-web-app>
     ```
 
@@ -620,7 +620,7 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
 
 1.  In the file editor, insert this configuration content:
 
-    ```
+    ```xml
     <Project Sdk="Microsoft.NET.Sdk">
         <PropertyGroup>
             <TargetFramework>netstandard2.0</TargetFramework>
@@ -639,7 +639,7 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
 
 1. In the JSON editor, observe the current configuration:
 
-    ```
+    ```json
     {
       "bindings": [
         {
@@ -656,7 +656,7 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
 
 1. Replace the entire contents of the JSON configuration file with the following JSON content:
 
-    ```
+    ```json
     {
       "bindings": [
         {
@@ -687,7 +687,7 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
 
 1. In the function editor, observe the example function script:
 
-    ```
+    ```cs
     public static void Run(Stream myBlob, string name, ILogger log)
     {
         log.LogInformation($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {myBlob.Length} Bytes");
@@ -698,7 +698,7 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
 
 1. Within the editor, copy and paste the following placeholder function:
 
-    ```
+    ```cs
     using SixLabors.ImageSharp;
     using SixLabors.ImageSharp.PixelFormats;
     using SixLabors.ImageSharp.Processing;
@@ -714,13 +714,13 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
 
 1. Add the following line of code within the **Run** method to log information about the function execution:
 
-    ```
+    ```cs
     log.LogInformation($"C# Blob trigger function Processed blob\n Name:{name} \n Size: {inputBlob.Length} Bytes");
     ```
 
 1. Add the following **using** statement to load the **Stream** for the input blob into the image library:
 
-    ```
+    ```cs
     using (Image<Rgba32> image = Image.Load(inputBlob))
     {
     }
@@ -728,7 +728,7 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
 
 1. Add the following lines of code within the **using** statement to mutate the image by resizing the image and applying a grayscale filter:
 
-    ```
+    ```cs
     image.Mutate(i => 	
         i.Resize(new ResizeOptions { Size = new Size(250, 250), Mode = ResizeMode.Max }).Grayscale()
     );
@@ -736,13 +736,13 @@ In this exercise, you created an Azure Web App and deployed an existing web appl
 
 1. Add the following line of code to save the new image to the **Stream** for the output blob:
 
-    ```
+    ```cs
     image.Save(outputBlob, new JpegEncoder());
     ```
 
 1. Your **Run** method should now resemble this:
 
-    ```
+    ```cs
     using SixLabors.ImageSharp;
     using SixLabors.ImageSharp.PixelFormats;
     using SixLabors.ImageSharp.Processing;
@@ -864,13 +864,13 @@ In this exercise, you created a background processing job in Azure Functions to 
 
 1.  In the **Cloud Shell** command prompt at the bottom of the portal, type in the following command and press Enter to list all resource groups in the subscription:
 
-    ```
+    ```powershell
     az group list
     ```
 
 1.  Type in the following command and press Enter to view a list of possible commands to delete a resource group:
 
-    ```
+    ```powershell
     az group delete --help
     ```
 
@@ -878,7 +878,7 @@ In this exercise, you created a background processing job in Azure Functions to 
 
 1.  Type the following command and press Enter to delete the **ManagedPlatform** resource group:
 
-    ```
+    ```powershell
     az group delete --name ManagedPlatform --no-wait --yes
     ```
 

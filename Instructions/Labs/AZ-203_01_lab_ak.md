@@ -198,13 +198,13 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 
 1. After you are connected to the VM by using SSH, you will see a prompt for the Bash shell in the VM. In the prompt, type in the following command and press Enter to view the computer name of the Linux VM:
 
-    ```
+    ```bash
     uname -mnipo
     ```
 
 12. In the prompt, type in the following command and press Enter to view information about the distribution and operating system of the Linux VM.
 
-    ```
+    ```bash
     uname -srv
     ```
 
@@ -224,7 +224,7 @@ In this exercise, you created a new VM manually by using the Azure portal interf
 
 1.  In the **Cloud Shell** command prompt at the bottom of the portal, type the following command and press Enter to view the version of the Azure CLI tool:
 
-    ```
+    ```bash
     az --version
     ```
 
@@ -232,19 +232,19 @@ In this exercise, you created a new VM manually by using the Azure portal interf
 
 1.  Type the following command and press Enter to view a list of subgroups and commands at the root level of the CLI:
 
-    ```
+    ```bash
     az --help
     ```
 
 1.  Type the following command and press Enter to view a list of subgroups and commands for **virtual machines**:
 
-    ```
+    ```bash
     az vm --help
     ```
 
 1.  Type the following command and press Enter to view a list of arguments and examples for the **Create Virtual Machine** command:
 
-    ```
+    ```bash
     az vm create --help
     ```
 
@@ -260,7 +260,7 @@ In this exercise, you created a new VM manually by using the Azure portal interf
     
       - **Password**: StudentPa55w.rd
 
-    ```
+    ```bash
     az vm create --resource-group ContainerCompute --name quickvm --image Debian --admin-username student --admin-password StudentPa55w.rd
     ```
 
@@ -270,37 +270,37 @@ In this exercise, you created a new VM manually by using the Azure portal interf
 
 1.  Type the following command and press Enter to view a more detailed JSON file that contains various metadata about the newly created VM:
 
-    ```
+    ```bash
     az vm show --resource-group ContainerCompute --name quickvm
     ```
 
 1.  Type the following command and press Enter to list all the IP addresses associated with the VM:
 
-    ```
+    ```bash
     az vm list-ip-addresses --resource-group ContainerCompute --name quickvm
     ```
 
 1.  Type the following command and press Enter to filter the output to only return the first IP address value:
 
-    ```
+    ```bash
     az vm list-ip-addresses --resource-group ContainerCompute --name quickvm --query '[].{ip:virtualMachine.network.publicIpAddresses[0].ipAddress}' --output tsv
     ```
 
 1.  Type the following command and press Enter to store the results of the previous command in a new Bash shell variable named *ipAddress*:
 
-    ```
+    ```bash
     ipAddress=$(az vm list-ip-addresses --resource-group ContainerCompute --name quickvm --query '[].{ip:virtualMachine.network.publicIpAddresses[0].ipAddress}' --output tsv)
     ```
 
 1. Type the following command and press Enter to print the value of the Bash shell variable *ipAddress*:
 
-    ```
+    ```bash
     echo $ipAddress
     ```
 
 1. Type the following command and press Enter to connect to the VM that you created earlier in this lab by using the SSH tool and the IP address stored in the Bash shell variable *ipAddress*:
 
-    ```
+    ```bash
     ssh student@$ipAddress
     ```
 
@@ -310,7 +310,7 @@ In this exercise, you created a new VM manually by using the Azure portal interf
 
 1. After you connect to the VM using SSH, type the following command and press Enter to view metadata describing the Linux VM:
 
-    ```
+    ```bash
     uname -a
     ```
 
@@ -330,37 +330,37 @@ In this exercise, you used the Azure Cloud Shell to create a VM as part of an au
 
 1.  In the **Cloud Shell** command prompt at the bottom of the portal, type the following command and press **Enter** to move from the root directory to the **\~/clouddrive** directory:
 
-    ```
+    ```bash
     cd ~/clouddrive
     ```
 
 1.  Type the following command and press Enter to create a new directory named **ipcheck** within the **\~/clouddrive** directory:
 
-    ```
+    ```bash
     mkdir ipcheck
     ```
 
 1.  Type the following command and press Enter to change the active directory from **\~/clouddrive** to **\~/clouddrive/ipcheck**:
 
-    ```
+    ```bash
     cd ~/clouddrive/ipcheck
     ```
 
 1.  Type the following command and press Enter to create a new .NET Core console application in the current directory:
 
-    ```
+    ```bash
     dotnet new console --output . --name ipcheck
     ```
 
 1.  Type the following command and press Enter to create a new file in the **\~/clouddrive/ipcheck** directory named **Dockerfile**:
 
-    ```
+    ```bash
     touch Dockerfile
     ```
 
 1.  Type the following command and press Enter to open the embedded graphical editor in the context of the current directory:
 
-    ```
+    ```bash
     code .
     ```
 
@@ -372,7 +372,7 @@ In this exercise, you used the Azure Cloud Shell to create a VM as part of an au
 
 1.  Copy and paste the following code into the **Program.cs** file:
 
-    ```
+    ```cs
     public class Program
     {
         public static void Main(string[] args)
@@ -399,7 +399,7 @@ In this exercise, you used the Azure Cloud Shell to create a VM as part of an au
 
 1.  Back in the command prompt, type the following command and press Enter to execute the application:
 
-    ```
+    ```bash
     dotnet run
     ```
 
@@ -409,7 +409,7 @@ In this exercise, you used the Azure Cloud Shell to create a VM as part of an au
 
 8.  Copy and paste the following code into the **Dockerfile** file:
 
-    ```
+    ```dockerfile
     FROM mcr.microsoft.com/dotnet/core/sdk:2.2-alpine AS build
     WORKDIR /app
 
@@ -471,25 +471,25 @@ In this exercise, you used the Azure Cloud Shell to create a VM as part of an au
 
 1.  In the **Cloud Shell** command prompt at the bottom of the portal, type the following command and press Enter to view a list of all container registries in your subscription:
 
-    ```
+    ```bash
     az acr list
     ```
 
 1.  Type the following command and press Enter:
 
-    ```
+    ```bash
     az acr list --query "max_by([], &creationDate).name" --output tsv
     ```
 
 1.  Type the following command and press Enter:
 
-    ```
+    ```bash
     acrName=$(az acr list --query "max_by([], &creationDate).name" --output tsv)
     ```
 
 1.  Type the following command and press Enter:
 
-    ```
+    ```bash
     echo $acrName
     ```
 
@@ -497,19 +497,19 @@ In this exercise, you used the Azure Cloud Shell to create a VM as part of an au
 
 1.  Type the following command and press Enter to change the active directory from **\~/** to **\~/clouddrive/ipcheck**:
 
-    ```
+    ```bash
     cd ~/clouddrive/ipcheck
     ```
 
 1.  Type the following command and press Enter to view the contents of the current directory:
 
-    ```
+    ```bash
     dir
     ```
 
 1.  Type the following command and press Enter to upload the source code to your **Container Registry** and build the container image as an **Azure Container Registry Task**:
 
-    ```
+    ```bash
     az acr build --registry $acrName --image ipcheck:latest .
     ```
 
@@ -720,13 +720,13 @@ In this exercise, you used multiple methods to deploy a container image to an Az
 
 1.  In the **Cloud Shell** command prompt at the bottom of the portal, type in the following command and press Enter to list all resource groups in the subscription:
 
-    ```
+    ```bash
     az group list
     ```
 
 1.  Type the following command and press Enter to view a list of possible commands to delete a resource group:
 
-    ```
+    ```bash
     az group delete --help
     ```
 
@@ -734,7 +734,7 @@ In this exercise, you used multiple methods to deploy a container image to an Az
 
 1.  Type the following command and press Enter to delete the **ContainerCompute** resource group:
 
-    ```
+    ```bash
     az group delete --name ContainerCompute --no-wait --yes
     ```
 

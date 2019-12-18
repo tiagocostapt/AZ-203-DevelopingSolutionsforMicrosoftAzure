@@ -46,19 +46,19 @@ Observe the taskbar located at the bottom of your **Windows 10** desktop. The ta
 
 1.  In the PowerShell command prompt, change the current working directory to the **Allfiles (F):\\** path:
 
-    ```
+    ```powershell
     cd F:
     ```
 
 1.  Within the command prompt, enter the following command and press Enter to clone the **microsoftlearning/AZ-203-DevelopingSolutionsforMicrosoftAzure** project hosted on GitHub into the **Allfiles (F):\\** drive:
 
-    ```
+    ```powershell
     git clone --depth 1 --no-checkout https://github.com/microsoftlearning/AZ-203-DevelopingSolutionsForMicrosoftAzure .
     ```
 
 1.  Within the command prompt, enter the following command and press **Enter** to check out the lab files necessary to complete the **AZ-203T05** lab:
 
-    ```
+    ```powershell
     git checkout master -- Allfiles/*
     ```
 
@@ -242,19 +242,19 @@ In this exercise, you created the resources that you will use for the remainder 
 
 1.  In the open command prompt, enter the following command and press Enter to create a new .NET Core Web API application named **SimpleApi** in the current directory:
 
-    ```
+    ```powershell
     dotnet new webapi --output . --name SimpleApi
     ```
 
 1.  In the command prompt, enter the following command and press Enter to add the **2.8.2** version of the **Microsoft.ApplicationInsights.AspNetCore** package from NuGet to the current project:
 
-    ```
+    ```powershell
     dotnet add package Microsoft.ApplicationInsights.AspNetCore --version 2.8.2
     ```
 
 1.  In the command prompt, enter the following command and press Enter to build the .NET Core web application:
 
-    ```
+    ```powershell
     dotnet build
     ```
     
@@ -264,7 +264,7 @@ In this exercise, you created the resources that you will use for the remainder 
 
 1.  In the editor, in the **Startup** class, locate and delete the following line of code at line **43**:
 
-    ```
+    ```cs
     app.UseHttpsRedirection();
     ```
 
@@ -272,7 +272,7 @@ In this exercise, you created the resources that you will use for the remainder 
 
 1.  Within the **Startup** class, add a new **static string constant** named **INSTRUMENTATION_KEY** with its value set to the **Instrumentation Key** you copied from the **Application Insights** resource you created earlier in this lab:
 
-    ```
+    ```cs
     private const string INSTRUMENTATION_KEY = "{your_instrumentation_key}";
     ```
 
@@ -280,7 +280,7 @@ In this exercise, you created the resources that you will use for the remainder 
 
 1.  Locate the **ConfigureServices** method within the **Startup** class:
 
-    ```
+    ```cs
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);        
@@ -289,13 +289,13 @@ In this exercise, you created the resources that you will use for the remainder 
 
 1.  Add a new line of code at the end of the **ConfigureServices** method to configure Application Insights using the provided instrumentation key:
 
-    ```    
+    ```cs
     services.AddApplicationInsightsTelemetry(INSTRUMENTATION_KEY);
     ```
 
 1.  Your **ConfigureServices** method should now look like this:
 
-    ```
+    ```cs
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);   
@@ -307,7 +307,7 @@ In this exercise, you created the resources that you will use for the remainder 
 
 1.  Locate the command prompt at the bottom of the screen. In the command prompt, enter the following command and press Enter to build the .NET Core web application.
 
-    ```
+    ```powershell
     dotnet build
     ```
 
@@ -315,7 +315,7 @@ In this exercise, you created the resources that you will use for the remainder 
 
 1.  Locate the command prompt at the bottom of the screen. In the command prompt, enter the following command and press Enter to execute the .NET Core web application.
 
-    ```
+    ```powershell
     dotnet run
     ```
 1.  On the taskbar, select the **Microsoft Edge** icon.
@@ -358,7 +358,7 @@ In this exercise, you created the resources that you will use for the remainder 
 
 1.  In the open command prompt, enter the following command and press Enter to sign in to the Azure CLI:
 
-    ```
+    ```powershell
     az login
     ```
 
@@ -376,31 +376,31 @@ In this exercise, you created the resources that you will use for the remainder 
 
 1.  At the command prompt, enter the following command and press Enter to list all the **apps** in your **MonitoredAssets** resource group:
 
-    ```
+    ```powershell
     az webapp list --resource-group MonitoredAssets
     ```
 
 1.  Enter the following command and press Enter to find the **apps** that have the prefix **smpapi\***:
 
-    ```
+    ```powershell
     az webapp list --resource-group MonitoredAssets --query "[?starts_with(name, 'smpapi')]"
     ```
 
 1. Enter the following command and press Enter to print out only the name of the single app that has the prefix **smpapi\***:
 
-    ```
+    ```powershell
     az webapp list --resource-group MonitoredAssets --query "[?starts_with(name, 'smpapi')].{Name:name}" --output tsv
     ```
 
 1. Enter the following command and press Enter to change the current directory to the **Allfiles (F):\\Allfiles\\Labs\\05\\Starter** directory that contains the deployment files:
 
-    ```
+    ```powershell
     cd F:\Allfiles\Labs\05\Starter\
     ```
 
 1. Enter the following command and press Enter to deploy the **api.zip** file to the **Web App** that you created earlier in this lab:
 
-    ```
+    ```powershell
     az webapp deployment source config-zip --resource-group MonitoredAssets --src api.zip --name <name-of-your-api-app>
     ```
 
@@ -442,19 +442,19 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
 
 1.  In the open command prompt, enter the following command and press Enter to create a new .NET Core console application named **SimpleConsole** in the current directory:
 
-    ```
+    ```powershell
     dotnet new console --output . --name SimpleConsole
     ```
 
 1.  In the command prompt, enter the following command and press Enter to add the **7.1.0** version of the **Polly** package from NuGet to the current project:
 
-    ```
+    ```powershell
     dotnet add package Polly --version 7.1.0
     ```
 
 1.  In the command prompt, enter the following command and press Enter to build the .NET Core web application:
 
-    ```
+    ```powershell
     dotnet build
     ```
 
@@ -464,19 +464,19 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
 
 1.  In the editor, add the following **using** directive for the **System.Net.Http** namespace:
 
-    ```
+    ```cs
     using System.Net.Http;
     ```
 
 1.  In the editor, add the following **using** directive for the **System.Threading.Tasks** namespace:
 
-    ```
+    ```cs
     using System.Threading.Tasks;
     ```
 
 1.  In the **SimpleConsole** namespace, locate the following class at line **7**:
 
-    ```
+    ```cs
     class Program
     {
         static void Main(string[] args)
@@ -488,7 +488,7 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
 
 1.  Replace the entire **Program** class with the following implementation:
 
-    ```
+    ```cs
     class Program
     {
         private const string _api = "";
@@ -508,7 +508,7 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
 
 1.  Locate the **\_api** constant at line **9**:
 
-    ```
+    ```cs
     private const string _api = "";
     ```
 
@@ -518,19 +518,19 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
 
 1.  Within the **Run** method, add the following line of code to asynchronously invoke the **HttpClient.GetStringAsync** method passing in a string for the relative path of **/api/values/**:
 
-    ```
+    ```cs
     string response = await _client.GetStringAsync("/api/values/");
     ```
 
 1.  Within the **Run** method, add an additional line of code to write out the response from the **GET** request to the console:
 
-    ```
+    ```cs
     Console.WriteLine(response);
     ```
 
 1. Your **Program.cs** file should now have the following code:
 
-    ```
+    ```cs
     using System;
     using System.Net.Http;
     using System.Threading.Tasks;
@@ -562,13 +562,13 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
 
 1.  At the bottom of the screen, in the command prompt, enter the following command and press Enter to execute the .NET Core web application.
 
-    ```
+    ```powershell
     dotnet run
     ```
 
 1.  Observe that the application successfully invokes the Web App in Azure and returns the same JSON array that you observed earlier in this lab. Your result should appear similar to the following JSON content:
 
-    ```
+    ```json
     ["value1","value2"]
     ```
 
@@ -594,7 +594,7 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
 
 1. In the open command prompt, enter the following command and press Enter to execute the .NET Core web application.
 
-    ```
+    ```powershell
     dotnet run
     ```
 
@@ -624,13 +624,13 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
 
 1.  Locate the **\_client** constant at line **10**:
 
-    ```
+    ```cs
     private static HttpClient _client = new HttpClient(){ BaseAddress = new Uri(_api) }; 
     ```
 
 1.  Update the **\_client** constant by updating the **HttpClient** constructor to use a new instance of the **PollyHandler** class:
 
-    ```
+    ```cs
     private static HttpClient _client = new HttpClient(new PollyHandler()){ BaseAddress = new Uri(_api) };
     ```
 
@@ -640,7 +640,7 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
 
 1.  At the bottom of the screen, in the command prompt, enter the following command and press Enter to execute the .NET Core web application.
 
-    ```
+    ```powershell
     dotnet run
     ```
 
@@ -668,7 +668,7 @@ In this exercise, you created an API by using ASP.NET Core and configured it to 
 
 1. Observe that the application finally successfully invokes the Web App in Azure and returns the same JSON array that you observed earlier in this lab. Your result should resemble the following JSON content:
 
-    ```
+    ```json
     ["value1","value2"]
     ```
 
@@ -788,13 +788,13 @@ In this exercise, you performed a performance (load) test of your Web App by usi
 
 1.  At the bottom of the portal in the **Cloud Shell** command prompt, type the following command and press Enter to list all resource groups in the subscription:
 
-    ```
+    ```powershell
     az group list
     ```
 
 1.  Type the following command and press Enter to view a list of possible commands to delete a resource group:
 
-    ```
+    ```powershell
     az group delete --help
     ```
 
@@ -802,7 +802,7 @@ In this exercise, you performed a performance (load) test of your Web App by usi
 
 1.  Type the following command and press Enter to delete the **MonitoredAssets** resource group:
 
-    ```
+    ```powershell
     az group delete --name MonitoredAssets --no-wait --yes
     ```
     
